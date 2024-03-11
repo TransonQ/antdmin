@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { LanguageMenu, ProductLogoMenu, UserMenu } from './header'
 import { LayoutSider } from './sider'
-
 const { Header, Sider } = Layout
 
 const HeaderNavBox = styled.div`
@@ -43,17 +42,8 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
           padding: '0 1.5rem 0 0.5rem',
         }}
       >
+        
         <ProductLogoMenu />
-        <div
-          className='demo-logo'
-          style={{
-            height: 34,
-            width: 124,
-            border: '1px solid gray',
-            borderRadius: '0.4rem',
-            marginLeft: '0.5rem',
-          }}
-        />
         <HeaderNavBox>
           <Flex
             gap='small'

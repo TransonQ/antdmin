@@ -1,8 +1,8 @@
-import { AppstoreOutlined } from '@ant-design/icons'
 import { Flex, Popover } from 'antd'
 import { useToggle } from 'react-use'
 import styled from 'styled-components'
 import { StyledPress } from '~/components'
+import logo from '../../assets/AntDmin.png'
 
 export const ProductLogoMenu = () => {
   const [isActive, toggleIsActive] = useToggle(false)
@@ -27,11 +27,7 @@ export const ProductLogoMenu = () => {
             >
               {products.map((product) => {
                 return (
-                  <ProductCard
-                    key={product.key}
-                  >
-                    {product.name}
-                  </ProductCard>
+                  <ProductCard key={product.key}>{product.name}</ProductCard>
                 )
               })}
             </Flex>
@@ -42,15 +38,13 @@ export const ProductLogoMenu = () => {
         open={isActive}
         onOpenChange={toggleIsActive}
       >
-        <Flex
-          gap={'small'}
-          align='center'
-          wrap='nowrap'
-        >
-          <div style={{ padding: '0 0.5rem' }}>
-            <AppstoreOutlined />
-          </div>
-        </Flex>
+        <img
+          src={logo}
+          alt='antdmin'
+          width={116}
+          height={'100%'}
+          style={{ transform: 'scale(1.4)' }}
+        />
       </Popover>
     </StyledPress>
   )
