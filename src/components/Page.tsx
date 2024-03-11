@@ -113,19 +113,18 @@ export const Page = ({
           >
             {backAction && (
               <Button
-                style={{ transform: 'translateY(4px)' }}
                 type='text'
                 icon={<LeftOutlined />}
                 onClick={backAction}
               />
             )}
-            <Typography.Title level={2}>{title}</Typography.Title>
-            <div
-              className='Antdmin_Page__metadata'
-              style={{ transform: 'translateY(4px)' }}
+            <Typography.Title
+              level={2}
+              style={{ margin: '1rem 0' }}
             >
-              {metaData}
-            </div>
+              {title}
+            </Typography.Title>
+            <div className='Antdmin_Page__metadata'>{metaData}</div>
           </Flex>
 
           <Flex

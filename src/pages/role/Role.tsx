@@ -18,6 +18,7 @@ export const Role = () => {
           content: 'An Application',
         },
       ]}
+      backAction={() => nav('/app/home')}
       primaryAction={{
         onAction: () => {},
         content: 'PrimaryText',
