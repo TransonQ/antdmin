@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios, { AxiosInstance } from 'axios'
 import {
   requestErrorHandler,
   requestHandler,
@@ -7,7 +7,7 @@ import {
 } from './interceptor.handlers'
 
 // 创建axios实例
-const ax = axios.create({
+const ax: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_APP_API_BASE, //TODO - 根据实际情况配置
 })
 

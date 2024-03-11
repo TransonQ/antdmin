@@ -2,28 +2,28 @@ import { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import { cookieScope } from '~/utils'
 
 type CustomRequestHeader = {
-  _with?: 'withToken' | 'withTokenTenant' | 'common'
+  headerAdd?: 'TOKEN' | 'TOKEN_TENANT' | 'COMMON'
 }
+// 扩展 AxiosRequestConfig 类型
+export type RequestConfig = InternalAxiosRequestConfig & CustomRequestHeader
 
 // 请求预处理
-export const requestHandler = (
-  config: InternalAxiosRequestConfig & CustomRequestHeader
-) => {
+export const requestHandler = (config: RequestConfig) => {
   const token = cookieScope.getToken()
   const tenantId = cookieScope.getTenantId()
 
-  switch (config._with) {
+  switch (config.headerAdd) {
     // 不携带任何 header
-    case 'common':
+    case 'COMMON':
       break
     // 携带 token 和租户 id (扩展案例)
-    case 'withTokenTenant': {
+    case 'TOKEN_TENANT': {
       config.headers.Authorization = token // 请求携带 token
       config.headers['x-tenant-id'] = tenantId //TODO - 确认键名
       break
     }
     // 默认携带 token
-    case 'withToken':
+    case 'TOKEN':
     default:
       config.headers.Authorization = token
       break
