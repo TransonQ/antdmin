@@ -8,8 +8,7 @@ import {
 
 // 创建axios实例
 const ax = axios.create({
-  // baseURL: import.meta.env.VITE_APP_API_BASE, //TODO - 根据实际情况配置
-  baseURL: '/',
+  baseURL: import.meta.env.VITE_APP_API_BASE, //TODO - 根据实际情况配置
 })
 
 // 请求拦截器
