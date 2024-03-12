@@ -1,6 +1,6 @@
-import { DownOutlined } from '@ant-design/icons'
-import { Breadcrumb, Button, theme } from 'antd'
+import { Breadcrumb, theme } from 'antd'
 import { Content } from 'antd/es/layout/layout'
+import { FilterTag } from '~/components/custom.filter/Filter.Tag'
 
 export const Home = () => {
   const {
@@ -21,13 +21,13 @@ export const Home = () => {
           borderRadius: borderRadiusLG,
         }}
       >
-        <Button
-          type='dashed'
-          size='small'
-        >
-          123
-          <DownOutlined />
-        </Button>
+        <FilterTag
+          key='1'
+          label='Filter tag'
+          onRemove={() => {
+            console.log('remove')
+          }}
+        />
       </Content>
     </>
   )
