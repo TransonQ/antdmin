@@ -42,7 +42,6 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
           padding: '0 1.5rem 0 0.5rem',
         }}
       >
-        
         <ProductLogoMenu />
         <HeaderNavBox>
           <Flex

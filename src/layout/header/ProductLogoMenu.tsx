@@ -1,8 +1,8 @@
-import { Flex, Popover } from 'antd'
+import { Flex, Popover, Typography } from 'antd'
 import { useToggle } from 'react-use'
 import styled from 'styled-components'
 import { StyledPress } from '~/components'
-import logo from '../../assets/AntDmin.png'
+// import logo from '../../assets/AntDmin.png'
 
 export const ProductLogoMenu = () => {
   const [isActive, toggleIsActive] = useToggle(false)
@@ -38,13 +38,30 @@ export const ProductLogoMenu = () => {
         open={isActive}
         onOpenChange={toggleIsActive}
       >
-        <img
+        {/* <img
           src={logo}
           alt='antdmin'
           width={116}
           height={'100%'}
           style={{ transform: 'scale(1.4)' }}
-        />
+        /> */}
+        <Flex
+          align='center'
+          wrap='nowrap'
+        >
+          <Typography.Title
+            level={2}
+            style={{
+              margin: 0,
+              color: 'white',
+              flexShrink: 0,
+              flexGrow: 1,
+              padding: '0 1rem 0 0',
+            }}
+          >
+            AntDmin
+          </Typography.Title>
+        </Flex>
       </Popover>
     </StyledPress>
   )
