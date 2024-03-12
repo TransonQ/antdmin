@@ -1,3 +1,3 @@
-export * from './Page'
-export * from './StyledPress'
+export * from './custom.page'
+export * from './styled'
 

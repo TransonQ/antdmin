@@ -45,23 +45,19 @@ export const ProductLogoMenu = () => {
           height={'100%'}
           style={{ transform: 'scale(1.4)' }}
         /> */}
-        <Flex
-          align='center'
-          wrap='nowrap'
+
+        <Typography.Title
+          level={2}
+          style={{
+            margin: 0,
+            color: 'white',
+            flexShrink: 0,
+            flexGrow: 1,
+            padding: '0 10px 0 0',
+          }}
         >
-          <Typography.Title
-            level={2}
-            style={{
-              margin: 0,
-              color: 'white',
-              flexShrink: 0,
-              flexGrow: 1,
-              padding: '0 1rem 0 0',
-            }}
-          >
-            AntDmin
-          </Typography.Title>
-        </Flex>
+          AntDmin
+        </Typography.Title>
       </Popover>
     </StyledPress>
   )
