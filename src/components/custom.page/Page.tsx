@@ -1,73 +1,11 @@
 import { LeftOutlined } from '@ant-design/icons'
-import {
-  Breadcrumb,
-  Button,
-  Col,
-  Dropdown,
-  Flex,
-  Layout,
-  Row,
-  Typography,
-} from 'antd'
+import { Breadcrumb, Button, Dropdown, Flex, Layout, Typography } from 'antd'
 import { BreadcrumbItemType } from 'antd/es/breadcrumb/Breadcrumb'
-import { ItemType } from 'antd/es/menu/hooks/useItems'
-import { PageBreakPoint } from '~/config'
+import { PageContent } from './Page.Content'
+import { PageLayout } from './Page.Layout'
+import { PageProps } from './types'
 
-type PageVariant = 'fullwidth' | 'center'
-
-type ActionProps = {
-  icon?: React.ReactNode
-  danger?: boolean
-  content?: React.ReactNode
-  onAction?: () => void
-}
-
-type PageProps = {
-  /** 页面内容 */
-  children?: React.ReactNode
-  /** 页面标题 */
-  title?: string
-  /** 页面面包屑导航 */
-  breadcrumb?: {
-    content: React.ReactNode
-    onAction?: () => void
-  }[]
-  /** 页面顶部主操作按钮 */
-  primaryAction?: ActionProps
-  /** 页面顶部次操作按钮 */
-  secondaryAction?: ActionProps & {
-    /** items 是否有更多的菜单 */
-    items?: ItemType[]
-  }
-  /** 页面宽度类型 */
-  variant?: PageVariant
-  /** 返回按钮点击函数, 如果没有则不显示 */
-  backAction?: () => void
-  /** 页面顶部标题之后自定义元数据 */
-  metaData?: React.ReactNode
-}
-
-const PageContent = ({
-  variant,
-  children,
-}: {
-  variant?: PageVariant
-  children: React.ReactNode
-}) => {
-  switch (variant) {
-    case 'center':
-      return (
-        <Row justify='center'>
-          <Col {...PageBreakPoint}>{children}</Col>
-        </Row>
-      )
-    case 'fullwidth':
-    default:
-      return <>{children}</>
-  }
-}
-
-export const Page = ({
+const Page = ({
   children,
   title,
   breadcrumb,
@@ -155,3 +93,7 @@ export const Page = ({
     </Layout.Content>
   )
 }
+
+Page.Layout = PageLayout
+
+export { Page }
